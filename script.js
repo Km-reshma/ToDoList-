@@ -1,8 +1,8 @@
 //DOM ELEMENTS & VARIABLES SETUP
 //Grabbing/Selecting DOM elements from the HTML document to interact with them in JavaScript
 const taskList = [];
-const lisElement = document.getElementById("taskList");
-const startTest = document.getElementById("start");
+const listElement = document.getElementById("taskList");
+const startTest = document.getElementById("startBtn");
 
 //basic setup for speech recognition
 //Initializing the browser's speech recognition engine for cross-browser compatibility
@@ -17,7 +17,7 @@ recognition.lang ='en-US';
 //Callback function that executes automatically when speech recognition finishes processing audio into text
 recognition.onresult =(event) => {
     
-    const transcript = event.result[0][0].transcript.toLowerCase();
+    const transcript = event.results[0][0].transcript.toLowerCase();
 
     statusText.innerText =`Heard : "${transcript} " `;
 
@@ -44,7 +44,7 @@ recognition.onresult =(event) => {
         const num = parseInt(transcript.split(" ")[2])-1;
 
         if(!isNaN(num))
-            markTask(num);
+            markTaskDone(num);
       
     }
 
@@ -92,12 +92,26 @@ function renderTasks(){
     taskList.forEach((task, idx) => {
 
         const li =document.createElement("li");
-        li.innerText = `${idx = 1}.${task.text} ${task.done ? "✅" : ""}`;
+        li.innerText = `${idx + 1}.${task.text} ${task.done ? "✅" : ""}`;
        
         listElement.appendChild(li); 
     });
    
 }
+
+
+function startVoice(){
+
+    statusText.innerText ="Listen.....................";
+    recognition.start();
+
+}
+
+document.getElementById("startBtn").addEventListener("click", startVoice);
+
+
+
+
 
 
 
