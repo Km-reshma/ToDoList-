@@ -56,3 +56,43 @@ For example:
 
 7. addTask(taskText);
 Calls the addTask() function and adds the task to the To-Do list
+-----------------------------------------------------------------------------------------------
+
+const num = parseInt(transcript.split(" ")[2]) - 1;
+
+(a). transcript.split(" ")
+    It breaks the sentence into separate words wherever there is a space.
+
+Example: transcript = "delete task 3"
+
+After: transcript.split(" ")
+
+we get: ["delete", "task", "3"]
+
+(b). [2]
+
+transcript.split(" ")[2]
+
+Gets the third word. JavaScript counting starts from 0:
+
+[0] → "delete"
+[1] → "task"
+[2] → "3"
+
+So the result is: "3"
+
+(c). parseInt()    -> parseInt("3")
+     Converts the text "3" into the number 3.
+
+(d). - 1,       -> means      3 - 1
+
+     Gives: 2
+
+Why subtract 1? Usually because the user sees task numbers starting from 1, but JavaScript arrays use indexes starting from 0.
+
+
+(e). if (!isNaN(num))
+means: If num is a valid number, then continue.
+
+(f). Then: deleteTask(num);
+     Calls the deleteTask() function and deletes that task.
