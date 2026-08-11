@@ -25,5 +25,42 @@ h1{
 #taskList{
 
     list-style: none;              /* no bullet marks ,which are occur by default*/
+    padding: 0px;
+    margin-bottom: 30px;
+ 
+}
 
+
+#taskList li{
+    
+    padding: 10px;
+    margin:5px 0;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    position:relative;
+    
+}
+
+#startBtn{
+
+    background-color: green;
+    color:white;
+    font-size :18px;
+    border: none;                            /*for remove the default black color line border*/
+    padding : 10px 20px;
+
+
+}
+
+
+
+.info{
+    
+    color: navy
+}
+
+
+
+#status{
+    color: #333;
 }
