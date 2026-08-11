@@ -96,3 +96,5 @@ means: If num is a valid number, then continue.
 
 (f). Then: deleteTask(num);
      Calls the deleteTask() function and deletes that task.
+
+

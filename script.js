@@ -13,6 +13,8 @@ recognition.continuous = false;                                  //Tells the bro
 recognition.lang ='en-US';                                       
 
 
+
+//Callback function that executes automatically when speech recognition finishes processing audio into text
 recognition.onresult =(event) => {
     
     const transcript = event.result[0][0].transcript.toLowerCase();
@@ -24,17 +26,16 @@ recognition.onresult =(event) => {
         const taskTest = transcript.replace("new task", "").trim();
 
         if(taskTest)
-
             addTask(taskTest);
+
     }
 
     else if(transcript.startsWith("delete task")){
 
         const num = parseInt(transcript.split(" ")[2])-1;
 
-        if(!isNan(num))
-
-            deleteTask(num);
+        if(!isNaN(num))
+             deleteTask(num);
        
     }        
 
@@ -42,13 +43,26 @@ recognition.onresult =(event) => {
 
         const num = parseInt(transcript.split(" ")[2])-1;
 
-        if(!isNan(num))
-
+        if(!isNaN(num))
             markTask(num);
       
     }
-            
+
 }
+
+
+//Defines a function to add a new task.
+
+function addTask(task){          
+
+    taskList.push({text :task, done :false});                    //Adds the task to the list and marks it as not completed.
+    renderTasks();                                               //Updates/displays the task list on the webpage.
+
+}
+
+
+
+
 
 
 
