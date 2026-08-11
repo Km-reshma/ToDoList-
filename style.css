@@ -3,4 +3,27 @@ body{
     background-color: #333;
     display:flex;
     justify-content :center;
+    height: 100vh;                  /*vh : verticalHeight*/
+    align-items : center;
+}
+
+.container{
+    background-color: lightblue;
+    padding :40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;                     /* x y blurnesslvel*/
+    width: 400px;
+    text-align :center;
+
+}
+
+h1{
+        color:#333;
+        margin-bottom: 30px;
+}
+
+#taskList{
+
+    list-style: none;              /* no bullet marks ,which are occur by default*/
+
 }
