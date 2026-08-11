@@ -86,7 +86,18 @@ function markTaskDone(num){
 }
 
 
+function renderTasks(){
 
+    listElement.innerHTML = "";
+    taskList.forEach((task, idx) => {
+
+        const li =document.createElement("li");
+        li.innerText = `${idx = 1}.${task.text} ${task.done ? "✅" : ""}`;
+       
+        listElement.appendChild(li); 
+    });
+   
+}
 
 
 
