@@ -61,6 +61,17 @@ function addTask(task){
 }
 
 
+//Defines a function to delete a task using its number/index.
+
+function deleteTask(num){
+
+    if(taskList[num]){                        //Checks if the task exists at that position.
+        taskList.splice(num, 1);              //Removes 1 task from the list at that position.
+        
+        renderTask();
+    }
+}
+
 
 
 
