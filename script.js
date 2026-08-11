@@ -51,7 +51,7 @@ recognition.onresult =(event) => {
 }
 
 
-//Defines a function to add a new task.
+//Defines a function to add a new task. ---> This function checks if the task exists, deletes it, and then updates the list.
 
 function addTask(task){          
 
@@ -68,9 +68,23 @@ function deleteTask(num){
     if(taskList[num]){                        //Checks if the task exists at that position.
         taskList.splice(num, 1);              //Removes 1 task from the list at that position.
         
-        renderTask();
+        renderTasks();
     }
 }
+
+
+
+//Defines a function to mark a task as completed.---->  This function finds a task, marks it as completed, and updates the display.
+
+function markTaskDone(num){
+
+    if(taskList[num]){                        //Checks if the task exists at that position.
+        taskList[num].done = true;            //Changes the task's status to completed.
+        
+        renderTasks();
+    }
+}
+
 
 
 
