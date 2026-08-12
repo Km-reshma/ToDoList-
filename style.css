@@ -1,8 +1,8 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #333;
-    display:flex;
-    justify-content :center;
+    display: flex;
+    justify-content: center;
     height: 100vh;                  /*vh : verticalHeight*/
     align-items : center;
 }
@@ -13,7 +13,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 0 10px;                     /* x y blurnesslvel*/
     width: 400px;
-    text-align :center;
+    text-align: center;
 
 }
 
@@ -48,19 +48,25 @@ h1{
     font-size :18px;
     border: none;                            /*for remove the default black color line border*/
     padding : 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 
 
+}
+
+#startBtn:hover {
+    background-color: darkgreen;
 }
 
 
 
 .info{
     
-    color: navy
+    color: navy;
 }
 
 
 
-#statusTText{
+#statusText{
     color: #333;
 }
