@@ -1,16 +1,22 @@
+
 //DOM ELEMENTS & VARIABLES SETUP
 //Grabbing/Selecting DOM elements from the HTML document to interact with them in JavaScript
 const taskList = [];
 const listElement = document.getElementById("taskList");
 const startTest = document.getElementById("startBtn");
+const statusText = document.getElementById("statusText");
+
+
 
 //basic setup for speech recognition
 //Initializing the browser's speech recognition engine for cross-browser compatibility
 
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const SpeechRecognition =window.SpeechRecognition || window.webkitSpeechRecognition
+
 const recognition = new SpeechRecognition();                      //Creates a Speech Recognition object that will listen to the user's voice.
 recognition.continuous = false;                                  //Tells the browser to stop listening after the user finishes speaking. It does not keep listening continuously.
 recognition.lang ='en-US';                                       
+
 
 
 
@@ -102,18 +108,12 @@ function renderTasks(){
 
 function startVoice(){
 
-    statusText.innerText ="Listen.....................";
+    statusText.innerText ="Listening...";
     recognition.start();
 
 }
 
 document.getElementById("startBtn").addEventListener("click", startVoice);
-
-
-
-
-
-
 
 
 
